@@ -19,7 +19,7 @@ export default {
                 return;
             }
             SaleServices.getSalesRoute().then((res)=>{
-                context.commit("setSalesRoute",res.data);
+                context.commit("setSalesRoute",res.data.data);
                 cb && cb(res);
             });
         }
