@@ -2,13 +2,7 @@
 
 export default class SalesModel{
     constructor(){
-        this.code = "";
-        this.materialNumber = "";
-        this.channelCode = "";
-        this.createBy = "";
-        this.createTime = "";
-        this.updateBy = "";
-        this.updateTime = "";
+        this.clear();
     }   
 
     get(){
@@ -24,12 +18,16 @@ export default class SalesModel{
     }
 
     set(data){
-        this.code = data.code;
-        this.materialNumber = data.materialNumber;
-        this.channelCode = data.channelCode;
-        this.createBy = data.createBy;
-        this.createTime = data.createTime;
-        this.updateBy = data.updateBy;
-        this.updateTime = data.updateTime;
+        Object.assign(this, data);
+    }
+
+    clear(){
+        this.code = "";
+        this.materialNumber = "";
+        this.channelCode = "";
+        this.createBy = "";
+        this.createTime = "";
+        this.updateBy = "";
+        this.updateTime = "";
     }
 }

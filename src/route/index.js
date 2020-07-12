@@ -5,16 +5,13 @@ const routers = [
         component:() => import('@pages/views/login/login.vue')
     },
     {
-        path: '/saleList',
-        name: 'saleList',
+        path: '/salelist',
+        name: 'salelist',
         component:() => import('@pages/views/sales/list.vue'),
-        children:[
-            
-        ]
     },
     {
-        path: '/saleList/:id/:tag',
-        name: 'save',
+        path: '/salelist/:id/:tag',
+        name: 'salesave',
         component:() => import('@pages/views/sales/save.vue')
     }
 ];

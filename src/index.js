@@ -7,6 +7,9 @@ import Router from 'vue-router';
 import routers from '@route/index.js';
 import storeModules from "@store/index.js";
 
+import CONSTANT from "@constant/index.js";
+Vue.use(CONSTANT);
+
 // //init store
 Vue.use(Vuex);
 let store = new Vuex.Store({
@@ -22,6 +25,8 @@ const router = new Router({
 
 import LeComponents from "@pages/components/le-components.min.js";
 Vue.use(LeComponents);
+
+
 
 new Vue({
     store,

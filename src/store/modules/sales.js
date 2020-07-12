@@ -15,6 +15,7 @@ export default {
     },
     actions:{
         getSalesRoute(context,cb){
+            // context.commit("setSalesRoute",KEYS.SALES.ACTION_LIST);
             if(context.state.salesRoute.length >0){
                 return;
             }

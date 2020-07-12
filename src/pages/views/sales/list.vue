@@ -42,7 +42,7 @@ export default {
                     {key:"updateTime",val:"<#Update Time#>"},
                 ],
                 getUrl:() => {
-                    return  "/productAPI/index/queryList/183?";
+                    return  "/productAPI/index/queryList/183?roleType="+this.searchModel.roleType;
                 },
                 pageOption:{
                     sizeKey:"pageSize",

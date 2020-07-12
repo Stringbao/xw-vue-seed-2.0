@@ -2,18 +2,50 @@
 
 import Ajax from "@util/http.js";
 
+const map = {
+    SalesRoute:"/productAPI/index/queryList/190",
+    create:"/productAPI/necSalesRoute/saveOrUpdate",
+    update:"/productAPI/necSalesRoute/saveOrUpdate",
+    remove:"/productAPI/necSalesRoute/saveOrUpdate",
+    detail:"/productAPI/necSalesRoute/saveOrUpdate",
+    list:"/productAPI/necSalesRoute/saveOrUpdate"
+}
+
 export default {
     getSalesRoute(){
-        return Ajax.get('/productAPI/index/queryList/190');
+        return Ajax.get(map.SalesRoute);
     },
     save(model){
-        let url = "/productAPI/necSalesRoute/saveOrUpdate";
+        if(model.code){
+            return this.update(model);
+        }else{
+            return this.create(model);
+        }
+    },
+    create(model){
         let params = {
             channelCode:model.channelCode,
             materialNumber:model.materialNumber
         };
-        model.code? params.code = model.code:"";
-
-        return Ajax.postFormData(url, params);
+        return Ajax.postFormData(map.create, params);
+    },
+    update(model){
+        let params = {
+            channelCode:model.channelCode,
+            materialNumber:model.materialNumber,
+            code:model.code
+        };
+        return Ajax.postFormData(map.update, params);
+    },
+    remove(model){
+        let params = {};
+        return Ajax.postFormData(map.remove, params);
+    },
+    list(){
+        return Ajax.get(map.list);
+    },
+    detail(model){
+        let params = {};
+        return Ajax.get(map.detail,params);
     }
 }
