@@ -1,7 +1,6 @@
-[{
-    "Project": "Security",
+{
     "Modules": [{
-        "ModuleName": "Roles --> 一个Module只有一个Store",
+        "ModuleName": "Roles",
         "Pages": [{
                 "PageName": "list.vue",
                 "type": "list",
@@ -19,7 +18,7 @@
                             "field": "roleType",
                             "displayName": "name",
                             "displayValue": "value",
-                            "dataSource": "salesRoute //选择数据源"
+                            "dataSource": "salesRoute"
                         }
                     ],
                     "table": {
@@ -38,20 +37,20 @@
                             "pageSize": "pageSize",
                             "currentPage": "currentPage"
                         }
-                    }
-                },
-                "dialog":[
-                    {
-                        "label": "角色类型",
-                        "type": "select",
-                        "field": "roleType",
-                        "displayName": "name",
-                        "displayValue": "value",
-                        "dataSource": "salesRouteA",
-                        "on": true,
-                        "required": true
-                    }
-                ]
+                    },
+                    "dialog":[
+                        {
+                            "label": "角色类型",
+                            "type": "select",
+                            "field": "roleType",
+                            "displayName": "name",
+                            "displayValue": "value",
+                            "dataSource": "salesRouteA",
+                            "on": true,
+                            "required": true
+                        }
+                    ]
+                }
             },
             {
                 "PageName": "save.vue",
@@ -112,4 +111,4 @@
             ]
         }
     }]
-}]
+}
