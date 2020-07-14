@@ -83,7 +83,7 @@
             },
             "update": {
                 "reqType":"post",
-                "url": "/api/getRoleTypes"
+                "url": ""
             },
             "remove": {
                 "reqType":"post",
@@ -91,12 +91,25 @@
             },
             "detail": {
                 "url": "/api/getRoleTypes"
+            },
+            "list": {
+                "url": "/api/getRoleTypes"
+            },
+            "querySubItems":{
+                "url": "/api/getSubItems"
             }
         },
         "Store": {
-            "state": [{
+            "state": [
+                {
                     "name": "salesRoute",
                     "type": "array",
+                    "url": "/api/getRoleTypes"
+                },
+                {
+                    "name": "salesRoute_A",
+                    "type": "array",
+                    "reqType":"post",
                     "url": "/api/getRoleTypes"
                 },
                 {
