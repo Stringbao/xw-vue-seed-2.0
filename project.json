@@ -76,29 +76,35 @@
                 ]
             }
         ],
-        "Services": {
-            "create": {
+        "Services": [
+            {
+                "name":"create",
                 "reqType":"post",
                 "url": "/api/getRoleTypes"
             },
-            "update": {
+            {
+                "name":"update",
                 "reqType":"post",
                 "url": ""
             },
-            "remove": {
+            {
+                "name":"remove",
                 "reqType":"post",
                 "url": "/api/getRoleTypes"
             },
-            "detail": {
+            {
+                "name":"detail",
                 "url": "/api/getRoleTypes"
             },
-            "list": {
+            {
+                "name":"list",
                 "url": "/api/getRoleTypes"
             },
-            "querySubItems":{
+            {
+                "name":"querySubItems",
                 "url": "/api/getSubItems"
             }
-        },
+        ],
         "Store": {
             "state": [
                 {
