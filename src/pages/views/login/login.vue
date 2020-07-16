@@ -16,8 +16,8 @@ export default {
     },
     methods:{
         login(){
-            let uid = "wupeng5";
-            let pwd = "Chen19910208aaa";
+            let uid = "";
+            let pwd = "";
             Ajax.postFormData("/login",{userid:uid,password:pwd,lang:"en",code:""}).then(res=>{
                 cookie.setCookie("jid",res.data.jid);
                 cookie.setCookie("tid",res.data.tid);

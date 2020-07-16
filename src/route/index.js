@@ -10,7 +10,7 @@ const routers = [
         component:() => import('@pages/views/sales/list.vue'),
     },
     {
-        path: '/salelist/:id/:tag',
+        path: '/salesave',
         name: 'salesave',
         component:() => import('@pages/views/sales/save.vue')
     }
