@@ -1,8 +1,8 @@
 
-import salesStore from "@store/modules/sales.js";
+import SalesStore from "@store/modules/sales.js";
 
 //moduleName + Store
 export default {
-    salesStore
+    SalesStore
 }
 

@@ -7,7 +7,7 @@
 <script>
 
 import Ajax from "@util/http.js";
-import {cookie} from "@util/util.js";
+import util from "@util/util.js";
 
 export default {
     name:"Login",
@@ -23,7 +23,6 @@ export default {
                 cookie.setCookie("tid",res.data.tid);
                 cookie.setCookie("userName",res.data.uname);
                 cookie.setCookie("userid",uid);
-                this.$router.push({path:"/saleList"});
             }).catch(err=>{
                     
             })

@@ -104,3 +104,9 @@ export {
     $idSeed,
     $event_publisher
 }
+
+export default {
+    cookie,
+    $idSeed,
+    $event_publisher
+}
