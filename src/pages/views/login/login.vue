@@ -7,7 +7,7 @@
 <script>
 
 import Ajax from "@util/http.js";
-import util from "@util/util.js";
+import {cookie} from "@util/util.js";
 
 export default {
     name:"Login",

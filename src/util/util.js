@@ -1,3 +1,5 @@
+import {cloneDeep, isEqual} from "lodash-es";
+
 const EventPublisher = function(){
 
     this.eventCallbackDictionary = {};
@@ -94,19 +96,41 @@ const date = {
     }
 }
 
+const obj = {
+    clone(source){
+        if(!source){
+            return null;
+        }
+        return cloneDeep(source);
+    },
+    isEqual(source, target){
+        return isEqual(source, target);
+    },
+    assign(source, target){
+        let cloneSource = this.clone(source);
+        return cloneSource && Object.assign(cloneSource, target);
+    }
+}
+
+const array = {
+
+}
+
 //object操作, 对比对象是否相等，克隆对象，addPrimaryAndCk，getCheckedItems
-//Array操作   removeItems，uniq，sort
+//Array操作  removeItems，uniq，sort
 
 const $event_publisher = new EventPublisher();
 
 export {
     cookie,
     $idSeed,
-    $event_publisher
+    $event_publisher,
+    obj
 }
 
 export default {
     cookie,
     $idSeed,
-    $event_publisher
+    $event_publisher,
+    obj
 }

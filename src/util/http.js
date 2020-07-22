@@ -1,4 +1,4 @@
-import {isPlainObject} from "lodash";
+import {isPlainObject} from "lodash-es";
 
 let ajaxTool = {
     JsonToSearchParams(params){
@@ -44,7 +44,7 @@ let ajaxTool = {
     },
     checkStatus(response) {
         if (response.status >= 200 && response.status < 500) {
-            return response
+            return response;
         }
         const error = new Error(response.statusText);
         error.response = response;
@@ -52,7 +52,7 @@ let ajaxTool = {
     },
     checkCode(response) {
         let { status,data,msg } = response;
-        switch (status) {
+        switch (status/1) {
             case 701:
                 // window.location.href = "";
                 return Promise.reject(response);
