@@ -7,7 +7,7 @@
 <script>
 
 import Ajax from "@util/http.js";
-import {cookie} from "@util/util.js";
+import {$cookie} from "@util/util.js";
 
 export default {
     name:"Login",
@@ -19,14 +19,17 @@ export default {
             let uid = "";
             let pwd = "";
             Ajax.postFormData("/login",{userid:uid,password:pwd,lang:"en",code:""}).then(res=>{
-                cookie.setCookie("jid",res.data.jid);
-                cookie.setCookie("tid",res.data.tid);
-                cookie.setCookie("userName",res.data.uname);
-                cookie.setCookie("userid",uid);
+                $cookie.setCookie("jid",res.data.jid);
+                $cookie.setCookie("tid",res.data.tid);
+                $cookie.setCookie("userName",res.data.uname);
+                $cookie.setCookie("userid",uid);
             }).catch(err=>{
                     
             })
         }
+    },
+    mounted(){
+        
     }
 }
 </script>

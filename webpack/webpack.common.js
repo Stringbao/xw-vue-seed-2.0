@@ -60,19 +60,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'test title',
             filename: 'index.html',
-            templateContent:`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>seed 2.0</title>
-                </head>
-                <body>
-                    <div id="app"></div>
-                </body>
-                </html>
-            `,
+            template:"./src/index.html",
             chunks:['index','runtime','vendors'],
             inject: true,
             minify: {
