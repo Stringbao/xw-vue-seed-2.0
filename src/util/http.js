@@ -1,4 +1,4 @@
-import {isPlainObject} from "lodash-es";
+import { isPlainObject } from "lodash-es";
 
 let ajaxTool = {
     JsonToSearchParams(params){
@@ -44,7 +44,7 @@ let ajaxTool = {
     },
     checkStatus(response) {
         if (response.status >= 200 && response.status < 500) {
-            return response;
+            return response
         }
         const error = new Error(response.statusText);
         error.response = response;
@@ -67,8 +67,7 @@ let ajaxTool = {
     }
 }
 
-class Ajax {
-    get(url, params = {}) {
+    const get = (url, params = {})=> {
         url = ajaxTool.serializeUrl(url, params);
         url = `${url}${url.endsWith("?")?"":"&"}ran=${Math.random()}`;
         return fetch(url)
@@ -77,7 +76,7 @@ class Ajax {
             .then(ajaxTool.checkCode)
             .catch((err) => { Promise.reject({ msg: err }) })
     }
-    post(url, params = {}) {
+    const post = (url, params = {})=> {
         const options = {
             body: JSON.stringify(params),
             method: "POST",
@@ -91,7 +90,7 @@ class Ajax {
             .then(ajaxTool.checkCode)
             .catch((err) => Promise.reject({ msg: err }))
     }
-    upload(url, params = {}) {
+    const upload = (url, params = {})=> {
         const formData = ajaxTool.JsonToFormData(params);
         const options = {
             body: formData,
@@ -106,10 +105,10 @@ class Ajax {
             .then(ajaxTool.checkCode)
             .catch((err) => Promise.reject({ msg: err }))
     }
-    all(promises) { 
+    const all = (promises)=> { 
         return Promise.all(promises);
     }
-    postFormData(url, params = {}) {
+    const postFormData = (url, params = {})=> {
         const formData = ajaxTool.JsonToSearchParams(params);
         const options = {
             body: formData,
@@ -119,8 +118,21 @@ class Ajax {
             .then(ajaxTool.checkStatus)
             .then(ajaxTool.parseJSON)
             .then(ajaxTool.checkCode)
-            .catch((err) => Promise.reject({ msg: err.msg }))
+            .catch((err) => Promise.reject({ msg: err }))
     }
+
+export{
+    get,
+    post,
+    upload,
+    all,
+    postFormData
 }
 
-export default new Ajax();
+export default{
+    get,
+    post,
+    upload,
+    all,
+    postFormData
+}
