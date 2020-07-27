@@ -23,7 +23,7 @@ const router = new Router({
     routes: routers
 });
 
-import LeComponents from "@pages/components/le-components.min.js";
+import LeComponents from "@pages/components/leComponent.min.js";
 Vue.use(LeComponents);
 
 
