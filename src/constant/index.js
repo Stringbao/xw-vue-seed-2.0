@@ -3,9 +3,9 @@
 export default {
     GOLBAL:{
         ACTION:{
-            ADD:"add",
-            EDIT:"edit",
-            DETAIL:"detail",
+            CREATE:"create",
+            UPDATE:"update",
+            DETAIL:"detail"
         }
     },
 }
