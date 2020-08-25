@@ -68,9 +68,15 @@ let ajaxTool = {
 }
 
     const get = (url, params = {})=> {
+        const options = {
+            method: "GET",
+            headers: {
+                'credentials': 'same-origin'
+            }
+        }
         url = ajaxTool.serializeUrl(url, params);
         url = `${url}${url.endsWith("?")?"":"&"}ran=${Math.random()}`;
-        return fetch(url)
+        return fetch(url, options)
             .then(ajaxTool.checkStatus)
             .then(ajaxTool.parseJSON)
             .then(ajaxTool.checkCode)
@@ -81,7 +87,8 @@ let ajaxTool = {
             body: JSON.stringify(params),
             method: "POST",
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'credentials': 'same-origin',
             }
         }
         return fetch(url, options)
@@ -96,7 +103,8 @@ let ajaxTool = {
             body: formData,
             method: 'POST',
             headers: {
-                'content-type': 'multipart/form-data'
+                'content-type': 'multipart/form-data',
+                'credentials': 'same-origin',
             }
         }
         return fetch(url, options)
@@ -113,6 +121,9 @@ let ajaxTool = {
         const options = {
             body: formData,
             method: 'POST',
+            headers: {
+                'credentials': 'same-origin',
+            }
         }
         return fetch(url, options)
             .then(ajaxTool.checkStatus)
