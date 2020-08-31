@@ -55,8 +55,9 @@ let ajaxTool = {
         let { status,data,msg } = response;
         switch (status/1) {
             case 701:
+                window.top.window.location.href = "//" +  window.top.document.domain + "/login.html";
                 // window.location.href = "";
-                return Promise.reject(response);
+                // return Promise.reject(response);
             case 200:
                 return Promise.resolve({ status, data, msg });
             default:
