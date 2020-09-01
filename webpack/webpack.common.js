@@ -33,6 +33,7 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ],
+                sideEffects:true
             },
             {
                 test:/.vue$/,
