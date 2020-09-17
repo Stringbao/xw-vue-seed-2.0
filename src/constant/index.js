@@ -1,7 +1,7 @@
 
 
 export default {
-    GOLBAL:{
+    GLOBAL:{
         ACTION:{
             CREATE:"create",
             UPDATE:"update",
