@@ -7,15 +7,15 @@ import Router from 'vue-router';
 import routers from '@route/index.js';
 import storeModules from "@store/index.js";
 
-import CONSTANT from "@constant/index.js";
-Vue.use(CONSTANT);
-
 // //init store
 Vue.use(Vuex);
 let store = new Vuex.Store({
     namespaced: true,
     modules:storeModules
 });
+
+import ajax from "@util/http.js";
+Vue.prototype.ajax = ajax;
 
 //init router
 Vue.use(Router);
@@ -25,8 +25,6 @@ const router = new Router({
 
 import LeComponents from "@pages/components/leComponent.min.js";
 Vue.use(LeComponents);
-
-
 
 new Vue({
     store,
