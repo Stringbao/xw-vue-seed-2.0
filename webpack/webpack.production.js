@@ -14,7 +14,7 @@ module.exports = merge(common,{
     plugins:[
         new CleanWebpackPlugin(),
         new SimpleProgressWebpackPlugin(),
-        new BundleAnalyzerPlugin()
+        // new BundleAnalyzerPlugin()
     ],
     optimization:{
         splitChunks:{
